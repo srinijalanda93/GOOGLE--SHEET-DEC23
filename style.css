@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+form {
+  display: flex;
+  /* border:3px solid blueviolet; */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* using the attribute selector */
+/* we can able to access the input */
+/* we need to hidden type=radio,checkbox,color */
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+
+/* when we trying to hidden the color it get on the top so use visibility property */
+input[type="color"] {
+  width: 0.1px;
+  height: 0.1px;
+  visibility: hidden;
+}
+
+/* highlighting the bgcolor when we checked on inputs */
+/* highlight using pseduit's next sibiling */
+input:checked + label {
+  /* border:1px solid red; */
+  background-color: #d3e2fd;
+}
+
+input + label {
+  padding: 4px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.row2 {
+  /* border :2px solid red; */
+  display: flex;
+  max-width: 60vw;
+  margin: 20px auto;
+  /* to make the row2 flex-container to center */
+}
+
+.row2 input {
+  flex-grow: 1;
+}
+
+.row2 .selected-cell {
+  /* border:2px solid rgb(165, 85, 85); */
+  width: 100px;
+  text-align: center;
+}
+/* container->header(A,B,C...)
+container->body(inside->sNo,rows-ontainer) */
+.header {
+  display: flex;
+}
+.header .cell {
+  border: 0.5px solid #c4c7c5;
+  min-width: 150px;
+  text-align: center;
+  padding: 4px 2px;
+  font-size: 0.9rem;
+}
+.body {
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-columns: 50px auto;
+}
+.container {
+  border: .5px solid #c4c7c5;
+  height: 80vh;
+  overflow: scroll;
+}
+.sno-container .snoCell {
+  border: 0.5px solid #c4c7c5;
+  /* text-align: center; */
+  height: 1.5rem;
+  font-size: .8rem;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.rows-container {
+  /* border:1px solid rgb(10, 19, 176); */
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+}
+/* for body-> rows-container(each row cells height must for the  sno-container .snoCell*/
+.row .cell {
+  border: 0.5px solid #c4c7c5;
+  min-width: 150px;
+  min-height: 1.5rem;
+}
+/* for the  .sno-container .snoCell width is 50px so same applied for frist cell of header*/
+.header .frist-cell{
+ min-width: 50px;
+ border: 0.5px solid #c4c7c5;
+}
+.row .cell:focus{
+    outline:2px solid #1b72e8;
+    height: auto;
+}
